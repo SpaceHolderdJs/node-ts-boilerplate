@@ -4,8 +4,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",  
+    "start": "node ./dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,6 @@
   "devDependencies": {
     "typescript": "^5.6.2",
     "ts-node": "^10.0.0",
-    "ts-node-dev": "^2.0.0"              
+    "ts-node-dev": "^2.0.0"
   }
 }
