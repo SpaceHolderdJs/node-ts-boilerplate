@@ -1,5 +1,5 @@
 import { Worker } from "worker_threads";
-// const path = require("path");
+const path = require("path");
 
 // Define the data type you are sending to the worker
 interface WorkerData {
@@ -14,7 +14,7 @@ interface ResultData {
   compTime: number;
 }
 
-const workerFile = "./dist/worker.js";
+const workerFile = path.join(process.cwd(), "dist", "worker.js");
 
 // Create a worker thread and pass data to it
 const worker0 = new Worker(workerFile, {
