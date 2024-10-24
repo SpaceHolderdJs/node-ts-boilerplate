@@ -1,5 +1,4 @@
 import { Worker } from "worker_threads";
-// const path = require("path");
 
 // Define the data type you are sending to the worker
 interface WorkerData {
@@ -11,19 +10,16 @@ interface ResultData {
   result: number;
   startNum: number;
   method: string;
-  compTime: number;
 }
 
-const workerFile = "./dist/worker.js";
-
 // Create a worker thread and pass data to it
-const worker0 = new Worker(workerFile, {
+const worker0 = new Worker("./worker.js", {
   workerData: { number: 42, method: "heavyComputation" } as WorkerData,
 });
-const worker1 = new Worker(workerFile, {
+const worker1 = new Worker("./worker.js", {
   workerData: { number: 15, method: "square" } as WorkerData,
 });
-const worker2 = new Worker(workerFile, {
+const worker2 = new Worker("./worker.js", {
   workerData: { number: 5, method: "factorial" } as WorkerData,
 });
 
@@ -31,7 +27,7 @@ const worker2 = new Worker(workerFile, {
   // Listen for messages from the worker thread
   worker.on("message", (result: ResultData) => {
     console.log(
-      `Result - ${result.result}, start number - ${result.startNum}, method - ${result.method}, comp time - ${result.compTime}`
+      `Result - ${result.result}, start number - ${result.startNum}, method - ${result.method}`
     );
   });
   // Handle errors from the worker thread
