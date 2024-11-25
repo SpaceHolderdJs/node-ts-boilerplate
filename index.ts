@@ -1,20 +1,38 @@
-const os = require("os");
+import * as fs from "node:fs/promises";
+import axios from "axios";
+const AxiosResponse = require("axios").AxiosResponse;
 
-// return the cpu architecture
-console.log("CPU architecture: " + os.arch());
+type User = {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+};
 
-// It returns the amount of free system memory in bytes
-console.log("Free memory: " + os.freemem() / 1024 / 1024 + " Mb");
-
-// It return total amount of system memory in bytes
-console.log("Total memory: " + os.totalmem() / 1024 / 1024 + " Mb");
-
-// It returns the list of network interfaces
-console.log(
-  "List of network Interfaces: " +
-    Object.keys(os.networkInterfaces()).map((elem) => `${elem} `) +
-    "\b."
-);
-
-// It returns the operating systems default directory for temp files.
-console.log("OS default directory for temp files : " + os.tmpdir());
+axios
+  .get("https://jsonplaceholder.typicode.com/users")
+  .then(function (responce: typeof AxiosResponse) {
+    responce.data.forEach((element: User) => {
+      fs.writeFile(
+        `./files/users/${element.username}.html`,
+        JSON.stringify(element)
+      );
+    });
+  });
