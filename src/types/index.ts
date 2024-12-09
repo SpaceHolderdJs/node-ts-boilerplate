@@ -1,8 +1,8 @@
 export interface UserType {
   id: number;
-  name: string | null;
-  age: number | null;
-  city: string | null;
+  name: string;
+  age: number;
+  city: string;
   skills: string[];
-  email: string | null;
+  email: string;
 }

@@ -27,7 +27,7 @@ const server = createServer(async (req, res) => {
     case "POST":
       if (url === "/users") {
         const user = await parseRequestBody(req);
-        const validatedUser = validateUser(JSON.parse(user), "create");
+        const validatedUser = validateUser(JSON.parse(user));
 
         if (validatedUser) {
           await createUser(validatedUser);
@@ -41,7 +41,7 @@ const server = createServer(async (req, res) => {
     case "PATCH":
       if (url === "/users") {
         const user = await parseRequestBody(req);
-        const validatedUser = validateUser(JSON.parse(user), "update");
+        const validatedUser = validateUser(JSON.parse(user));
 
         if (validatedUser) {
           await updateUser(validatedUser);

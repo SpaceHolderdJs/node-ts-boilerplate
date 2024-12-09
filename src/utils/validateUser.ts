@@ -1,21 +1,20 @@
 import { UserType } from "../types";
 
-export const validateUser = (
-  user: unknown,
-  type: "create" | "update"
-): Omit<UserType, "id"> | UserType | null => {
-  if (typeof user !== "object" || user === null) return null;
+type ValidationUserDataType = UserType & Record<string, unknown>;
 
-  const u = user as Record<string, unknown>;
+export const validateUser = (user: ValidationUserDataType): UserType | null => {
+  const fields: Array<keyof typeof user> = [
+    "id",
+    "name",
+    "age",
+    "city",
+    "skills",
+    "email",
+  ];
 
-  if (type === "update" && typeof u.id !== "number") return null;
+  const validationResult = fields.every((key) => user.hasOwnProperty(key));
 
-  return {
-    ...(type === "update" && { id: u.id }),
-    name: typeof u.name === "string" ? u.name : null,
-    age: typeof u.age === "number" ? u.age : null,
-    city: typeof u.city === "string" ? u.city : null,
-    skills: Array.isArray(u.skills) ? (u.skills as string[]) : [],
-    email: typeof u.email === "string" ? u.email : null,
-  };
+  if (validationResult) return user as UserType;
+
+  return null;
 };
