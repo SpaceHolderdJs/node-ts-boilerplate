@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "age": 28,
+    "city": "New York",
+    "skills": ["React", "TypeScript", "CSS"],
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "age": 35,
+    "city": "San Francisco",
+    "skills": ["JavaScript", "Node.js", "Express"],
+    "email": "bob.smith@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Charlie Davis",
+    "age": 42,
+    "city": "Chicago",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "email": "charlie.davis@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Diana Miller",
+    "age": 31,
+    "city": "Los Angeles",
+    "skills": ["React", "Redux", "Node.js"],
+    "email": "diana.miller@example.com"
+  },
+  {
+    "id": 5,
+    "name": "Ethan Wilson",
+    "age": 24,
+    "city": "Miami",
+    "skills": ["Angular", "TypeScript", "SCSS"],
+    "email": "ethan.wilson@example.com"
+  },
+  {
+    "id": 6,
+    "name": "Fiona Taylor",
+    "age": 27,
+    "city": "Boston",
+    "skills": ["Vue.js", "JavaScript", "HTML"],
+    "email": "fiona.taylor@example.com"
+  },
+  {
+    "id": 7,
+    "name": "George Lee",
+    "age": 38,
+    "city": "Seattle",
+    "skills": ["Python", "Django", "REST APIs"],
+    "email": "george.lee@example.com"
+  },
+  {
+    "id": 8,
+    "name": "Hannah White",
+    "age": 33,
+    "city": "Austin",
+    "skills": ["JavaScript", "React", "Node.js"],
+    "email": "hannah.white@example.com"
+  },
+  {
+    "id": 9,
+    "name": "Ivy Harris",
+    "age": 29,
+    "city": "Denver",
+    "skills": ["Ruby", "Rails", "SQL"],
+    "email": "ivy.harris@example.com"
+  },
+  {
+    "id": 10,
+    "name": "Jack Brown",
+    "age": 40,
+    "city": "Atlanta",
+    "skills": ["Java", "Spring Boot", "MySQL"],
+    "email": "jack.brown@example.com"
+  }
+]
